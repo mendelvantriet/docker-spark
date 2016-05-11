@@ -3,7 +3,7 @@ from pyspark import SparkContext
 import os
 
 logFile = os.environ['SPARK_HOME'] + "/README.md"  # Should be some file on your system
-sc = SparkContext("local", "Simple App")
+sc = SparkContext(appName="Simple App")
 logData = sc.textFile(logFile).cache()
 
 numAs = logData.filter(lambda s: 'a' in s).count()
