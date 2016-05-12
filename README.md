@@ -17,7 +17,7 @@ A containerized standalone Spark cluster.
 ## Test
 
 	docker ps --no-trunc
-	spark-submit --master spark://$IP:7077 $SPARK_HOME/examples/src/main/python/pi.py
+	docker exec -it $CID spark-submit --master spark://$IP:7077 examples/src/main/python/pi.py
 	
 ## WebUI
 
@@ -27,4 +27,7 @@ Go to http://<IP>:8080/
 
 Fit for no purpose
 
+## TODO
+
+Mount SimpleApp.py inside container
 
